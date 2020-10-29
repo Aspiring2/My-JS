@@ -117,79 +117,59 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   }
 
   return newRequire;
-})({"../../../../AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/bundle-url.js":[function(require,module,exports) {
-var bundleURL = null;
+})({"classes/Chart.js":[function(require,module,exports) {
+"use strict";
 
-function getBundleURLCached() {
-  if (!bundleURL) {
-    bundleURL = getBundleURL();
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.draw = draw;
+
+function draw() {
+  var myCanvas = document.getElementById("myCanvas");
+  myCanvas.width;
+  myCanvas.height;
+  var ctx = myCanvas.getContext("2d");
+
+  function drawPieSlice(ctx, centerX, centerY, radius, startAngle, endAngle, color) {
+    ctx.fillStyle = color;
+    ctx.beginPath();
+    ctx.moveTo(centerX, centerY);
+    ctx.arc(centerX, centerY, radius, startAngle, endAngle);
+    ctx.closePath();
+    ctx.fill();
   }
 
-  return bundleURL;
-}
-
-function getBundleURL() {
-  // Attempt to find the URL of the current script and use that as the base URL
-  try {
-    throw new Error();
-  } catch (err) {
-    var matches = ('' + err.stack).match(/(https?|file|ftp|chrome-extension|moz-extension):\/\/[^)\n]+/g);
-
-    if (matches) {
-      return getBaseURL(matches[0]);
-    }
-  }
-
-  return '/';
-}
-
-function getBaseURL(url) {
-  return ('' + url).replace(/^((?:https?|file|ftp|chrome-extension|moz-extension):\/\/.+)\/[^/]+$/, '$1') + '/';
-}
-
-exports.getBundleURL = getBundleURLCached;
-exports.getBaseURL = getBaseURL;
-},{}],"../../../../AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/css-loader.js":[function(require,module,exports) {
-var bundle = require('./bundle-url');
-
-function updateLink(link) {
-  var newLink = link.cloneNode();
-
-  newLink.onload = function () {
-    link.remove();
+  skill_value = {
+    skill_val: 80,
+    tot_val: 100
   };
+  skill_value.tot_val = 100 - skill_value.skill_val;
 
-  newLink.href = link.href.split('?')[0] + '?' + Date.now();
-  link.parentNode.insertBefore(newLink, link.nextSibling);
-}
+  function total_value() {
+    var startAngle = 2 * Math.PI;
+    var index_radius = 4;
+    var color = "#aeaeae";
 
-var cssTimeout = null;
+    for (el in skill_value) {
+      val = skill_value[el];
+      endAngle = 2 * Math.PI * val / 100;
+      drawPieSlice(ctx, myCanvas.width / 2, myCanvas.height / 2, myCanvas.width / index_radius, startAngle, startAngle += endAngle, color);
+      startAngle = endAngle;
+      color = "#ffaa00";
+      index_radius += 0.5;
+    } //HoleChart
 
-function reloadCSS() {
-  if (cssTimeout) {
-    return;
+
+    drawPieSlice(ctx, myCanvas.width / 2, myCanvas.height / 2, myCanvas.width / 7, Math.PI, Math.PI * 4, "#fff");
+    ctx.fillStyle = "black";
+    ctx.font = "bold 200% Arial";
+    ctx.fillText(skill_value.skill_val + "%", myCanvas.width / 2 - 30, myCanvas.height / 2 + 13);
   }
 
-  cssTimeout = setTimeout(function () {
-    var links = document.querySelectorAll('link[rel="stylesheet"]');
-
-    for (var i = 0; i < links.length; i++) {
-      if (bundle.getBaseURL(links[i].href) === bundle.getBundleURL()) {
-        updateLink(links[i]);
-      }
-    }
-
-    cssTimeout = null;
-  }, 50);
+  return total_value();
 }
-
-module.exports = reloadCSS;
-},{"./bundle-url":"../../../../AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/bundle-url.js"}],"styles/Profile.css":[function(require,module,exports) {
-var reloadCSS = require('_css_loader');
-
-module.hot.dispose(reloadCSS);
-module.hot.accept(reloadCSS);
-},{"_css_loader":"../../../../AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/css-loader.js"}],"../../../../AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{}],"../../../../AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -393,5 +373,5 @@ function hmrAcceptRun(bundle, id) {
     return true;
   }
 }
-},{}]},{},["../../../../AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js"], null)
-//# sourceMappingURL=/Profile.875ad863.js.map
+},{}]},{},["../../../../AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js","classes/Chart.js"], null)
+//# sourceMappingURL=/Chart.d3c9489b.js.map

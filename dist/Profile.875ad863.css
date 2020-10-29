@@ -10,7 +10,7 @@
   box-sizing: border-box;
   display: inline-block;
   padding: 0 15px;
-  background: rgb(238, 238, 238);
+  background: rgb(247, 142, 142);
 }
 
 .photo {
@@ -39,9 +39,10 @@ a {
   text-decoration-color: rgb(0, 0, 0);
   text-decoration-line: none;
   text-decoration-style: solid;
-  display: inline;
+  display: block;
 }
 .download-resume {
+  display: block;
   padding: 17px 5px;
   text-align: center;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
@@ -49,27 +50,30 @@ a {
 }
 
 .download {
+   display: block;
   text-decoration: none;
-  margin-bottom: 25px;
+ 
   font-size: 16px;
 }
 
 .icon-cloud {
+  display: block;
   content: "\f0ed";
 }
 
 .availabel {
+  display: block;
   text-align: center;
   font-size: 14px;
   margin-top: 15px;
 }
 
-.col-2 {
+.col-profile2 {
   box-sizing: border-box;
   display: inline-block;
-  vertical-align: top;
   padding: 0 15px;
-  background: rgb(238, 238, 238);
+  background: rgb(230, 110, 110);
+ 
 }
 .info-profile {
   box-sizing: border-box;

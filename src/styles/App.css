@@ -10,7 +10,7 @@ body {
 }
 
 .content {
-  background-color: rgb(239, 239, 239);
+  background-color: rgb(245, 170, 170);
   box-sizing: border-box;
   color: rgb(0, 0, 0);
   display: block;
@@ -22,7 +22,7 @@ body {
   display: block;
   top: 0;
   min-height: 200vh;
-  background: rgb(208, 208, 208);
+  background: rgb(173, 248, 155);
   max-width: 1000px;
   margin-top: 75px;
 }
@@ -30,14 +30,15 @@ body {
 .row {
   box-sizing: border-box;
   display: flex;
-  background: rgb(238, 238, 238);
-  margin-left: -15px;
-  margin-right: -15px;
+  background: rgb(139, 158, 245);
+ 
+ justify-content: center;
+  align-content: center;
 }
 
 .section {
   box-sizing: border-box;
   margin-top: 80px;
-  background: rgb(238, 238, 238);
+  background: rgb(250, 247, 106);
 
 }
