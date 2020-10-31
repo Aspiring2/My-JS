@@ -1,4 +1,4 @@
-export function draw() {
+
     var myCanvas = document.getElementById("myCanvas");
     myCanvas.width;
     myCanvas.height;
@@ -71,6 +71,7 @@ export function draw() {
         );
     }
     
-    return total_value()
-}
+    
 
+
+total_value()
