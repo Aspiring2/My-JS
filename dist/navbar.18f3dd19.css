@@ -1,0 +1,149 @@
+.navbar {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 50;
+}
+.navbar:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: grey;
+  z-index: 2;
+}
+.container {
+  max-width: 1180px;
+  margin: 0px auto;
+  padding: 0px 10px;
+}
+
+.nav_body {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  height: 75px;
+  align-items: center;
+}
+
+.nav_logo {
+  flex: 0 0 60px;
+  border-radius: 50%;
+  overflow: hidden;
+  position: relative;
+  z-index: 3;
+}
+.nav_logo img {
+  width: 100%;
+}
+.nav-header {
+  z-index: 3;
+}
+
+.nav-list {
+  display: flex;
+  position: relative;
+  z-index: 2;
+}
+.nav-list li {
+  list-style: none;
+  margin: 0 0 0 20px;
+}
+.nav-list a {
+  color: honeydew;
+  text-transform: uppercase;
+  font-size: 18px;
+  text-decoration: none;
+}
+
+.content_text {
+}
+@media (max-width: 767px) {
+  body.lock {
+    overflow: hidden;
+  }
+
+  .nav_body {
+    height: 50px;
+  }
+  .nav_burger {
+    display: block;
+    position: relative;
+    width: 30px;
+    height: 20px;
+    z-index: 3;
+  }
+
+  .nav_burger span {
+    content: "";
+    background-color: aliceblue;
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    left: 0;
+    top: 9px;
+    transition: all 0.3s ease 0s;
+  }
+  .nav_burger:before,
+  .nav_burger:after {
+    content: "";
+    background-color: aliceblue;
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    left: 0;
+    transition: all 0.3s ease 0s;
+  }
+  .nav_burger:before {
+    top: 0;
+  }
+  .nav_burger:after {
+    bottom: 0;
+  }
+
+  .nav_burger.active:before {
+    transform: rotate(45deg);
+    top: 9px;
+  }
+  .nav_burger.active:after {
+    transform: rotate(-45deg);
+    bottom: 9px;
+  }
+  .nav_burger.active span {
+    transform: scale(0);
+  }
+
+  .nav_logo {
+    flex: 0 0 40px;
+  }
+  .nav_menu {
+    position: fixed;
+    top: -100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    transition: all 0.3s ease 0s;
+    background-color: rgb(172, 172, 172);
+    padding: 50px 0 0 0;
+  }
+  .nav_menu.active {
+    top: 0;
+  }
+
+  .nav-list {
+    display: block;
+  }
+  .nav-list li {
+    margin: 0 0 20px 0;
+  }
+  
+  .content_text {
+  }
+}
+
+
+/*# sourceMappingURL=/navbar.18f3dd19.css.map */

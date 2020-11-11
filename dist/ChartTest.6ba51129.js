@@ -118,11 +118,6 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 
   return newRequire;
 })({"classes/Chart.js":[function(require,module,exports) {
-var myCanvas = document.getElementById("myCanvas");
-myCanvas.width;
-myCanvas.height;
-var ctx = myCanvas.getContext("2d");
-
 function drawPieSlice(ctx, centerX, centerY, radius, startAngle, endAngle, color) {
   ctx.fillStyle = color;
   ctx.beginPath();
@@ -132,6 +127,10 @@ function drawPieSlice(ctx, centerX, centerY, radius, startAngle, endAngle, color
   ctx.fill();
 }
 
+a = {
+  id1: "myCanvas",
+  id2: "myCanvas-2"
+};
 skill_value = {
   skill_val: 80,
   tot_val: 100
@@ -143,20 +142,26 @@ function total_value() {
   var index_radius = 4;
   var color = "#aeaeae";
 
-  for (el in skill_value) {
-    val = skill_value[el];
-    endAngle = 2 * Math.PI * val / 100;
-    drawPieSlice(ctx, myCanvas.width / 2, myCanvas.height / 2, myCanvas.width / index_radius, startAngle, startAngle += endAngle, color);
-    startAngle = endAngle;
-    color = "#ffaa00";
-    index_radius += 0.5;
-  } //HoleChart
+  for (b in a) {
+    var myCanvas = document.getElementById(a[b]);
+    myCanvas.width = 200;
+    myCanvas.height = 200;
+    var ctx = myCanvas.getContext("2d");
 
+    for (el in skill_value) {
+      val = skill_value[el];
+      endAngle = 2 * Math.PI * val / 100;
+      drawPieSlice(ctx, myCanvas.width / 2, myCanvas.height / 2, myCanvas.width / index_radius, startAngle, startAngle += endAngle, color);
+      startAngle = endAngle;
+      color = "#ffaa00";
+      index_radius += 0.5; //HoleChart
 
-  drawPieSlice(ctx, myCanvas.width / 2, myCanvas.height / 2, myCanvas.width / 7, Math.PI, Math.PI * 4, "#fff");
-  ctx.fillStyle = "black";
-  ctx.font = "bold 200% Arial";
-  ctx.fillText(skill_value.skill_val + "%", myCanvas.width / 2 - 30, myCanvas.height / 2 + 13);
+      drawPieSlice(ctx, myCanvas.width / 2, myCanvas.height / 2, myCanvas.width / 7, Math.PI, Math.PI * 4, "#fff");
+      ctx.fillStyle = "black";
+      ctx.font = "bold 140% Arial";
+      ctx.fillText(skill_value.skill_val + "%", myCanvas.width / 2 - 23, myCanvas.height / 2 + 10);
+    }
+  }
 }
 
 total_value();
@@ -194,7 +199,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50783" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61109" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

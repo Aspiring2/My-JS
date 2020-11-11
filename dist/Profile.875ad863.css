@@ -1,11 +1,16 @@
-/*Profile*/
+/*#################################################
+Profile
+#################################################*/
 .profile {
+  display: flex;
   box-sizing: border-box;
   background: rgb(238, 238, 238);
   padding: 33px 33px 22px 33px;
 }
 
-
+/*#################################################
+Column-1
+#################################################*/
 .col-profile1 {
   box-sizing: border-box;
   display: inline-block;
@@ -16,15 +21,17 @@
 .photo {
   box-sizing: border-box;
   color: rgb(0, 0, 0);
-  display: block;
+  margin-top: 25px;
   margin-bottom: 20px;
-  width: 200px;
+  max-width: 250px;
   margin-left: auto;
   margin-right: auto;
   box-shadow: 0 0 3px rgba(0, 0, 0, 0.4);
 }
+
 img {
   width: 100%;
+  margin: auto;
 }
 
 a {
@@ -50,9 +57,9 @@ a {
 }
 
 .download {
-   display: block;
+  display: block;
   text-decoration: none;
- 
+
   font-size: 16px;
 }
 
@@ -67,17 +74,23 @@ a {
   font-size: 14px;
   margin-top: 15px;
 }
-
+/*#################################################
+Column-2 
+#################################################*/
 .col-profile2 {
   box-sizing: border-box;
-  display: inline-block;
+  display: flex;
+  flex-direction: column;
   padding: 0 15px;
-  background:rgb(238, 238, 238);
- 
+  background: rgb(238, 238, 238);
+  display: flex;
 }
 .info-profile {
   box-sizing: border-box;
   background: rgb(238, 238, 238);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .h1-header {
@@ -88,15 +101,8 @@ a {
   color: rgb(0, 0, 0);
 }
 
-/* .h3-header {
- 
-} */
-
 p {
-  word-wrap: break-word;
-}
-ul {
-  display: block;
+  max-width: 500px;
 }
 
 li {
@@ -106,16 +112,28 @@ li {
 .personal-info {
   box-sizing: border-box;
   background: rgb(255, 255, 255);
-  
 }
 
 .personal-info ul li span {
   font-size: 16px;
   margin-right: 5px;
-  color: rgbrgb(238, 238, 238);
+  color: rgb(151, 151, 151);
 }
 
-/*Social Links*/
+@media (max-width: 767px) {
+  .info-profile {
+    align-items: center;
+    margin-top: 20px;
+  }
+  
+  p {
+    max-width: 500px;
+    text-align: center;
+  } 
+}
+
+/*----------Social Links----------
+#################################*/
 
 .title-links {
   display: block;
@@ -123,11 +141,12 @@ li {
 }
 
 .social-icons-3 {
-  box-sizing:border-box;
+  box-sizing: border-box;
   padding: 0;
   list-style: none;
   margin: 10px;
-  display: inline-block;
+  display: flex;
+  flex-wrap: wrap;
   justify-content: left;
 }
 

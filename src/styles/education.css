@@ -1,0 +1,47 @@
+.date-education  {
+    background-color: rgb(4, 135, 204);
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 0px 6px 0px;
+    color: rgb(255, 255, 255);    
+    font-family: "PT Sans Narrow", sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    padding: 0 18px;
+    position: relative;
+    text-align: center;  
+    top: 32px;
+}
+.col-info {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    padding: 0 15px;
+    background: rgb(238, 238, 238);
+  }
+
+.add-education {
+    background-color: rgb(255, 255, 255);
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 5px 0px,
+      rgba(0, 0, 0, 0.11) 0px 2px 10px 0px;
+    color: rgb(117, 117, 117);  
+    align-items: center;
+    padding: 0 30px 30px 30px;
+  }
+.info-education {
+    box-sizing: border-box;
+    background: rgb(238, 238, 238);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  @media (max-width: 767px) {
+    .info-education {
+      align-items: center;
+      margin-top: 20px;
+    }
+    
+    p {
+      max-width: 500px;
+      text-align: center;
+    } 
+  }

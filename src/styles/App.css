@@ -5,15 +5,16 @@ body {
   display: flex;
   overflow-x: auto;
   overflow-y: auto;
-  align-items: center;
   justify-content: center;
+  align-content: center;
 }
 
 .content {
+  margin-top: 40px;
   background-color:rgb(238, 238, 238);
   box-sizing: border-box;
   color: rgb(0, 0, 0);
-  display: block;
+  display: flex;
   font-family: "PT Sans Narrow", sans-serif;
 }
 
@@ -21,21 +22,32 @@ body {
   box-sizing: border-box;
   display: block;
   top: 0;
-  min-height: 200vh;
   background: rgb(238, 238, 238);
   max-width: 1000px;
-  margin-top: 75px;
 }
+
 
 .row {
   box-sizing: border-box;
   display: flex;
-  background: rgb(238, 238, 238);
- 
- justify-content: center;
+  background: rgb(238, 238, 238); 
+  justify-content: center;
   align-content: center;
+  
 }
-
+@media(max-width: 767px){
+  .row  {
+max-width: 640px;
+flex-wrap: wrap;
+  }
+  .photo {
+    max-width: 640px;
+    width: 80%;
+  }
+  .content {
+    
+  }
+}
 .section {
   box-sizing: border-box;
   margin-top: 80px;

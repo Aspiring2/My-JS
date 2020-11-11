@@ -76,8 +76,8 @@ Column PROFESSIONAL SKILLS
 
 /*Search this styles
 !!!!!!!!!!!!!!!!!!!!!!!!*/
-.title-progress {
-}
+/* .title-progress {
+} */
 
 .progress-bar {
   background-color: rgb(4, 135, 204);
@@ -116,7 +116,6 @@ Column ADDITIONAL SKILLS
 ##################################################*/
 .col-skills2 {
   box-sizing: border-box;
-  display: inline-flex;
   padding: 0 15px;
   background: rgb(238, 238, 238);
 }
@@ -125,8 +124,8 @@ Column ADDITIONAL SKILLS
   background-color: rgb(255, 255, 255);
   box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 5px 0px,
     rgba(0, 0, 0, 0.11) 0px 2px 10px 0px;
-  color: rgb(117, 117, 117);
-
+  color: rgb(117, 117, 117);  
+  align-items: center;
   margin-bottom: 70px;
   padding: 0 30px 30px 30px;
 }
@@ -135,6 +134,10 @@ Column ADDITIONAL SKILLS
   box-sizing: border-box;
   align-content: center;
   color: rgb(117, 117, 117);
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-wrap: wrap;
 }
 
 .col-circle {
